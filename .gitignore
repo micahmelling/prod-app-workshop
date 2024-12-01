@@ -1,0 +1,18 @@
+*.txt
+!requirements.txt
+*.pyc
+*.csv
+!data/raw/Student_performance_data _.csv
+!data/raw/student_performance.csv
+*.xlsx
+*.png
+*.jpeg
+*.db
+*.pkl
+*.dot
+*.DS_Store
+.idea/
+__pycache__/
+venv/
+scratch.py
+scratch/

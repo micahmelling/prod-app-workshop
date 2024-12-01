@@ -1,0 +1,15 @@
+{
+  "StudentID": 1001,
+  "Age": 17,
+  "Gender": "cat_1",
+  "ParentalEducation": "cat_2",
+  "StudyTimeWeekly": 19.83,
+  "Absences": 7,
+  "Tutoring": "cat_1",
+  "ParentalSupport": "cat_2",
+  "Extracurricular": "cat_0",
+  "Sports": "cat_0",
+  "Music": "cat_1",
+  "Volunteering": "cat_0",
+  "counselor": "c"
+}

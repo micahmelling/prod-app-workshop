@@ -1,0 +1,26 @@
+{
+    "dev": {
+        "app_function": "app.app",
+        "exclude": [
+            "boto3",
+            "dateutil",
+            "botocore",
+            "s3transfer",
+            "concurrent",
+            "auto-shap",
+            "shap"
+        ],
+        "exclude_glob": [
+            "diagnostics/*",
+            "cv_scores/*",
+            "data/*",
+            "random_forest_202411302023362858910600/*"
+        ],
+        "profile_name": null,
+        "project_name": "prod-app-worksh",
+        "runtime": "python3.9",
+        "s3_bucket": "",
+        "slim_handler": true,
+        "ephemeral_storage": { "Size": 10240 }
+    }
+}
