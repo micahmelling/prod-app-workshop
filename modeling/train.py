@@ -1,3 +1,8 @@
+# To make the demo easier, we will try to automatically solve any path issues
+from pathlib import Path
+import sys
+sys.path.append(str(Path(__file__).parent.resolve().parent))
+
 from typing import Tuple, List
 
 import pandas as pd
