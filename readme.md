@@ -40,9 +40,11 @@ the repo. In this case, you will need to fill in the name of the S3 bucket
 (you can make something up, and Zappa will create it for you).
 
 We also have to adjust some default settings to deploy a project of this size on
-Lambda. In zappa_settings.json in the repo, take note of the arguments for 
-slim_handler and ephemeral_storage. Likewise, take note of the exclude list, where
-we can mark packages we do not need for the production deployment. Additionally,
+Lambda when using a zip archive to package our project (for simplicity, we are 
+taking this route instead of using Docker). In zappa_settings.json in the repo, 
+take note of the arguments for slim_handler and ephemeral_storage. Likewise, 
+take note of the exclude list, where we can mark packages we do not need for 
+the production deployment. Additionally,
 the exclude_glob list allows us to remove directories not needed for the 
 production app; to note, random_forest_202411302023362858910600 is the ID of the
 model I opted to not deploy, so it is excluded.
