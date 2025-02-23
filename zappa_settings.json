@@ -14,7 +14,7 @@
             "diagnostics/*",
             "cv_scores/*",
             "data/*",
-            "random_forest_202411302023362858910600/*"
+            "random_forest_202502221058333864750600/*"
         ],
         "profile_name": null,
         "project_name": "prod-app-worksh",
