@@ -13,7 +13,6 @@ from modeling.config import (model_named_tuple, evaluation_named_tuple, MODEL_TR
 from modeling.model import train_model
 from modeling.pipeline import get_pipeline
 from modeling.evaluate import run_omnibus_model_evaluation
-from modeling.explain import produce_shap_values_and_plots
 from helpers.utils import create_uid
 
 
@@ -40,10 +39,10 @@ def create_training_and_testing_data(df: pd.DataFrame, target: str, test_set_per
     return x_train, x_test, y_train, y_test
 
 
-def train_evaluate_explain_model(x_train: pd.DataFrame, x_test: pd.DataFrame, y_train: pd.DataFrame,
-                                 y_test: pd.DataFrame, model_training_list: List[model_named_tuple],
-                                 cv_strategy: int, cv_scoring: str, static_param_space: dict,
-                                 evaluation_list: List[evaluation_named_tuple]) -> None:
+def train_evaluate_model(x_train: pd.DataFrame, x_test: pd.DataFrame, y_train: pd.DataFrame,
+                         y_test: pd.DataFrame, model_training_list: List[model_named_tuple],
+                         cv_strategy: int, cv_scoring: str, static_param_space: dict,
+                         evaluation_list: List[evaluation_named_tuple]) -> None:
     for model in model_training_list:
         model_uid = create_uid(base_string=model.model_name)
         best_pipeline = train_model(x_train=x_train, y_train=y_train, get_pipeline_function=get_pipeline,
@@ -52,7 +51,6 @@ def train_evaluate_explain_model(x_train: pd.DataFrame, x_test: pd.DataFrame, y_
                                     static_param_space=static_param_space)
         run_omnibus_model_evaluation(estimator=best_pipeline, x_df=x_test, target=y_test, model_uid=model_uid,
                                      evaluation_list=evaluation_list)
-        produce_shap_values_and_plots(pipeline=best_pipeline, x_df=x_test, model_uid=model_uid)
 
 
 def main(data_path: str, target: str, test_set_percentage: float, model_training_list: List[model_named_tuple],
@@ -64,7 +62,7 @@ def main(data_path: str, target: str, test_set_percentage: float, model_training
         target=target,
         test_set_percentage=test_set_percentage
     )
-    train_evaluate_explain_model(
+    train_evaluate_model(
         x_train=x_train,
         x_test=x_test,
         y_train=y_train,
