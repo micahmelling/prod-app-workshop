@@ -27,12 +27,12 @@ kappa==0.6.0
 kiwisolver==1.4.7
 llvmlite==0.43.0
 MarkupSafe==3.0.2
-matplotlib==3.9.2
+matplotlib==3.9.3
 networkx==3.2.1
 numba==0.60.0
 numpy==2.0.1
 packaging==24.1
-pandas==2.2.2
+pandas==2.2.3
 pillow==10.4.0
 placebo==0.9.0
 py4j==0.10.9.7
@@ -46,6 +46,7 @@ s3transfer==0.10.4
 scikit-learn==1.5.2
 scipy==1.13.1
 shap==0.46.0
+setuptools==75.8.0
 six==1.16.0
 slicer==0.0.8
 text-unidecode==1.3

@@ -5,7 +5,7 @@ import joblib
 import pandas as pd
 
 
-MODEL_ID = 'hist_gb_202502221059409325970600'  # switch out for desired model after training
+MODEL_ID = 'hist_gb_202502231423460514670600'  # switch out for desired model after training
 MODEL = model = joblib.load(f'modeling/model_results/{MODEL_ID}/model/model.pkl')
 app = Flask(__name__)
 app.secret_key = 'my_precious'  # ideally, this is pulled from a password vault
